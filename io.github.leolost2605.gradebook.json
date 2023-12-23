@@ -17,7 +17,8 @@
               {
                   "type": "git",
                   "url": "https://github.com/leolost2605/Gradebook.git",
-                  "commit": "5e32052d2f4997502b226fb2e378c0dc66d31eae" 
+                  "tag": "v1.2-rc1",
+                  "commit": "40dc5c6b8d1c6a6c06096a8b417f6f3d9a827d58" 
               }
           ]
       }
