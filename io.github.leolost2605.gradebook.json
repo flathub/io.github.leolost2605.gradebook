@@ -1,0 +1,25 @@
+{
+  "app-id": "io.github.leolost2605.gradebook",
+  "runtime": "org.gnome.Platform",
+  "runtime-version": "45",
+  "sdk": "org.gnome.Sdk",
+  "command": "io.github.leolost2605.gradebook",
+  "finish-args": [
+      "--share=ipc",
+      "--socket=fallback-x11",
+      "--socket=wayland"
+  ],
+  "modules": [
+      {
+          "name": "gradebook",
+          "buildsystem": "meson",
+          "sources": [
+              {
+                  "type": "git",
+                  "url": "https://github.com/leolost2605/Gradebook.git",
+                  "commit": "64db654e83d7e752a7c6099e5ac9d750edb8be38" 
+              }
+          ]
+      }
+  ]
+}
