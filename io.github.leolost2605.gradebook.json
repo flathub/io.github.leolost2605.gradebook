@@ -1,7 +1,7 @@
 {
     "id": "io.github.leolost2605.gradebook",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "49",
+    "runtime-version": "50",
     "sdk": "org.gnome.Sdk",
     "command": "io.github.leolost2605.gradebook",
     "finish-args": [
@@ -14,6 +14,11 @@
         {
             "name": "gradebook",
             "buildsystem": "meson",
+            "post-install": [
+                "mkdir -p /app/share/icons/hicolor/scalable/apps",
+                "mv /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+                "find /app/share/icons/hicolor -type f -not -path \"*scalable*\" -not -path \"*actions*\" -name \"*.svg\" -delete"
+            ],
             "sources": [
                 {
                     "type": "git",
@@ -21,11 +26,6 @@
                     "tag": "v1.2",
                     "commit": "8a586057d7b930085c14ca23338e88698ec54ed4"
                 }
-            ],
-            "post-install": [
-                "mkdir -p /app/share/icons/hicolor/scalable/apps",
-                "mv /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
-                "find /app/share/icons/hicolor -type f -not -path \"*scalable*\" -not -path \"*actions*\" -name \"*.svg\" -delete"
             ]
         }
     ]
